@@ -302,9 +302,4 @@ void RenderComponent::AddGrid(int gridSize, float cellSize, Color color)
 			}
 		}
 	}
-	// COORDINATE AXIS
-		//AddLine(Vector4(0, 0, 0, 1), Vector4(cellSize, 0, 0, 1), Color(1, 0, 0, 1));
-		//AddLine(Vector4(0, 0, 0, 1), Vector4(0, cellSize, 0, 1), Color(0, 1, 0, 1));
-		//AddLine(Vector4(0, 0, 0, 1), Vector4(0, 0, cellSize, 1), Color(0, 0, 1, 1));
-	// COORDINATE AXIS
 }
