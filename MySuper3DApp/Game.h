@@ -7,7 +7,6 @@ class GameObject;
 class RenderSystem;
 class InputDevice;
 class Camera;
-class FPSCameraController;
 class TPSCameraController;
 
 class Game
@@ -25,7 +24,6 @@ private:
 	float deltaTime;
 	unsigned int frameCount;
 
-	std::shared_ptr<FPSCameraController> fpsCameraController;
 	std::shared_ptr<TPSCameraController> tpsCameraController;
 	bool wasProjectionKeyDown = false;
 	bool wasCameraControllerKeyDown = false;

@@ -3,7 +3,6 @@
 #include "DisplayWin32.h"
 #include "InputDevice.h"
 #include "Camera.h"
-#include "FPSCameraController.h"
 #include "TPSCameraController.h"
 #include "GameObject.h"
 
@@ -39,7 +38,6 @@ void Game::PrepareResources()
 	inputDevice = std::make_shared<InputDevice>();
 	camera = std::make_shared<Camera>();
 	render = std::make_shared<RenderSystem>();
-	fpsCameraController = std::make_shared<FPSCameraController>();
 	tpsCameraController = std::make_shared<TPSCameraController>();
 	camera->SetCameraController(tpsCameraController.get());
 }
@@ -105,37 +103,6 @@ void Game::UpdateInternal()
 	if (inputDevice->IsKeyDown(Keys::Escape))
 	{
 		PostQuitMessage(0);
-	}
-	if (inputDevice->IsKeyDown(Keys::O))
-	{
-		if (!wasProjectionKeyDown)
-		{
-			wasProjectionKeyDown = true;
-			camera->isPerspectiveProjection = !camera->isPerspectiveProjection;
-		}
-	}
-	else
-	{
-		wasProjectionKeyDown = false;
-	}
-	if (inputDevice->IsKeyDown(Keys::P))
-	{
-		if (!wasCameraControllerKeyDown)
-		{
-			wasCameraControllerKeyDown = true;
-			if (camera->GetCameraController() == fpsCameraController.get())
-			{
-				camera->SetCameraController(tpsCameraController.get());
-			}
-			else
-			{
-				camera->SetCameraController(fpsCameraController.get());
-			}
-		}
-	}
-	else
-	{
-		wasCameraControllerKeyDown = false;
 	}
 	camera->Update(deltaTime);
 }
