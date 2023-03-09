@@ -78,9 +78,6 @@
     <ClCompile Include="TPSCameraController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SceneObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="SolarSystemGame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -91,6 +88,9 @@
       <Filter>Project</Filter>
     </ClCompile>
     <ClCompile Include="CollisionComponent.cpp">
+      <Filter>Project</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneObject.cpp">
       <Filter>Project</Filter>
     </ClCompile>
   </ItemGroup>
@@ -143,9 +143,6 @@
     <ClInclude Include="TPSCameraController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SceneObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SolarSystemGame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -156,6 +153,9 @@
       <Filter>Project</Filter>
     </ClInclude>
     <ClInclude Include="CollisionComponent.h">
+      <Filter>Project</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObject.h">
       <Filter>Project</Filter>
     </ClInclude>
   </ItemGroup>

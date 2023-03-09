@@ -13,10 +13,11 @@ public:
     RenderComponent(std::string shaderFileName, D3D_PRIMITIVE_TOPOLOGY topology);
     RenderComponent() = delete;
     ~RenderComponent();
-    void Draw();
+
     void Initialize();
     void Update();
 
+    void Draw();
     void AddGrid(int gridSize, float cellSize, Color color);
     void AddCube(float radius);
     void AddSphere(float radius, int sliceCount, int stackCount, DirectX::XMFLOAT4 color);

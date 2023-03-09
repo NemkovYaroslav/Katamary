@@ -1,5 +1,6 @@
 #pragma once
 #include "includes.h"
+#include "CollisionComponent.h"
 
 class DisplayWin32;
 class GameObject;
@@ -49,6 +50,7 @@ protected:
 public:
 
 	std::vector<GameObject*> GameObjects;
+
 	Game(const Game&) = delete;
 	void operator = (const Game&) = delete;
 	virtual ~Game() = default;

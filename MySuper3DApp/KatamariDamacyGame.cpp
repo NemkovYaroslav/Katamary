@@ -14,20 +14,22 @@ void KatamariDamacyGame::Initialize()
 	grid->CreateGrid(20, 1.0f, Color(1.0f, 0.5f, 1.0f, 1.0f));
 	Game::GetInstance()->AddGameObject(grid);
 
-	KatamariObject* sun = new KatamariObject();
-	sun->CreateSphere(1.0f);
-	sun->SetPosition(Vector3::UnitY);
-	sun->rotationAxis = Vector3::Zero;
-	sun->rotationSpeed = 1;
-	sun->isKatamari = true;
+	KatamariObject* katamari = new KatamariObject();
+	katamari->radius = katamari->katamariRadius;
+	katamari->CreateSphere(katamari->katamariRadius);
+	katamari->SetPosition(Vector3::UnitY);
+	katamari->rotationAxis = Vector3::Zero;
+	katamari->rotationSpeed = 5;
+	katamari->isKatamari = true;
 
-	KatamariObject* moon = new KatamariObject(sun);
-	moon->CreateSphere(0.5f);
-	moon->SetPosition(Vector3::UnitY * 1.5f);
+	KatamariObject* moon = new KatamariObject(katamari);
+	moon->radius = 0.5f;
+	moon->CreateSphere(moon->radius);
+	moon->SetPosition(katamari->GetPosition() * 1.6f);
 	moon->rotationAxis = Vector3::Zero;
 	moon->rotationSpeed = 1;
 
-	Game::GetInstance()->AddGameObject(sun);
+	Game::GetInstance()->AddGameObject(katamari);
 	Game::GetInstance()->AddGameObject(moon);
 }
 

@@ -1,32 +1,27 @@
 #include "CollisionComponent.h"
 
-CollisionComponent::CollisionComponent() : Component()
+CollisionComponent::CollisionComponent(float radius, Vector3 center) : Component()
 {
-
-}
-
-CollisionComponent::~CollisionComponent()
-{
-	
+	this->sphereCollision = nullptr;
+	this->center = center;
+	this->radius = radius;
 }
 
 void CollisionComponent::Initialize()
 {
-
+	this->sphereCollision = new DirectX::BoundingSphere();
+	sphereCollision->Center = center;
+	sphereCollision->Radius = radius;
+	collisionComponents.push_back(sphereCollision);
 }
 
 void CollisionComponent::Update()
 {
-	
-}
-
-void CollisionComponent::AddCubeCollision(float radius)
-{
-	DirectX::BoundingBox* BBBox = new DirectX::BoundingBox();
-	BBBox->Center = { Vector3::Zero };
-	BBBox->Extents = { radius, radius, radius };
-}
-void CollisionComponent::AddSphereCollision(float size)
-{
-
+	for (const auto& collision : collisionComponents)
+	{
+		if ((sphereCollision->Intersects(*collision)) )
+		{
+			std::cout << (sphereCollision == collision) << std::endl;
+		}
+	}
 }

@@ -11,7 +11,8 @@ FPSCameraController::FPSCameraController() : CameraController()
 void FPSCameraController::Update(float deltaTime)
 {
 	Vector3 cameraPos = Game::GetInstance()->GetCamera()->position;
-	Matrix rotationMatrix = Matrix::CreateFromYawPitchRoll(yaw, pitch, 0);
+
+	rotationMatrix = Matrix::CreateFromYawPitchRoll(yaw, pitch, 0);
 
 	if (Game::GetInstance()->GetCamera()->isPerspectiveProjection)
 	{

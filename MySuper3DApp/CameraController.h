@@ -4,16 +4,21 @@
 
 class Camera;
 
+using namespace DirectX::SimpleMath;
+
 class CameraController
 {
 protected:
 
 	float cameraRotationSpeed = 0.005f;
-	float yaw = 0;
-	float pitch = 0;
 	bool wasCameraControllerKeyDown = false;
 
 public:
+
+	float yaw = 0;
+	float pitch = 0;
+
+	Matrix rotationMatrix;
 
 	CameraController();
 	virtual void Update(float deltaTime) = 0;
