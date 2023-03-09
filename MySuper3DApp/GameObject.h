@@ -33,7 +33,7 @@ public:
 	virtual Matrix GetWorld() const;
 	virtual Quaternion GetRotation() const;
 	virtual Vector3 GetPosition() const;
-	virtual void SetWorld(const Vector3& newPosition, const Quaternion& newRotation);
-	virtual void SetRotation(const Quaternion& newRotation);
-	virtual void SetPosition(const Vector3& newPosition);
+	virtual void SetWorld(const Vector3& position, const Quaternion& rotation);
+	virtual void SetRotation(const Quaternion& rotation);
+	virtual void SetPosition(const Vector3& position);
 };

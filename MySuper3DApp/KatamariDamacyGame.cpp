@@ -17,7 +17,7 @@ void KatamariDamacyGame::Initialize()
 	KatamariObject* sun = new KatamariObject();
 	sun->CreateSphere(1.0f);
 	sun->SetPosition(Vector3::UnitY);
-	sun->rotationAxis = Vector3::UnitX;
+	sun->rotationAxis = Vector3::Zero;
 	sun->rotationSpeed = 1;
 
 	Game::GetInstance()->AddGameObject(sun);

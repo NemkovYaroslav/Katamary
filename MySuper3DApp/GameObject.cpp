@@ -33,11 +33,13 @@ void GameObject::Update(float deltaTime)
 
 void GameObject::UpdateWorld()
 {
+	/*
 	world = Matrix::CreateFromQuaternion(rotation) * Matrix::CreateTranslation(position);
 	if (parent)
 	{
 		world *= parent->GetWorld();
 	}
+	*/
 }
 
 Matrix GameObject::GetWorld() const        { return world;    }
