@@ -42,6 +42,19 @@ void GameObject::UpdateWorld()
 	*/
 }
 
+void GameObject::CreateCube(float radius)
+{
+	renderComponent = new RenderComponent("../Shaders/MyVeryFirstShader.hlsl", D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+	renderComponent->AddCube(radius);
+	components.push_back(renderComponent);
+}
+void GameObject::CreateSphere(float radius, int sliceCount, int stackCount, DirectX::XMFLOAT4 color)
+{
+	renderComponent = new RenderComponent("../Shaders/MyVeryFirstShader.hlsl", D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+	renderComponent->AddSphere(radius, sliceCount, stackCount, color);
+	components.push_back(renderComponent);
+}
+
 Matrix GameObject::GetWorld() const        { return world;    }
 Quaternion GameObject::GetRotation() const { return rotation; }
 Vector3 GameObject::GetPosition() const    { return position; }

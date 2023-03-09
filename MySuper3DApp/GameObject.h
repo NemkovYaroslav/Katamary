@@ -30,6 +30,9 @@ public:
 	virtual void Initialize();
 	virtual void UpdateWorld();
 
+	void CreateCube(float radius);
+	void CreateSphere(float radius, int sliceCount = 80, int stackCount = 80, DirectX::XMFLOAT4 color = Vector4::One);
+
 	virtual Matrix GetWorld() const;
 	virtual Quaternion GetRotation() const;
 	virtual Vector3 GetPosition() const;

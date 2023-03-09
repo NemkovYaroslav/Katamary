@@ -19,8 +19,16 @@ void KatamariDamacyGame::Initialize()
 	sun->SetPosition(Vector3::UnitY);
 	sun->rotationAxis = Vector3::Zero;
 	sun->rotationSpeed = 1;
+	sun->isKatamari = true;
+
+	KatamariObject* moon = new KatamariObject(sun);
+	moon->CreateSphere(0.5f);
+	moon->SetPosition(Vector3::UnitY * 1.5f);
+	moon->rotationAxis = Vector3::Zero;
+	moon->rotationSpeed = 1;
 
 	Game::GetInstance()->AddGameObject(sun);
+	Game::GetInstance()->AddGameObject(moon);
 }
 
 void KatamariDamacyGame::Run()
