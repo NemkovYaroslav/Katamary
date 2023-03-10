@@ -1,10 +1,10 @@
 #include "CollisionComponent.h"
 
-CollisionComponent::CollisionComponent(float radius, Vector3 center) : Component()
+CollisionComponent::CollisionComponent() : Component()
 {
 	this->sphereCollision = nullptr;
-	this->center = center;
-	this->radius = radius;
+	this->center = Vector3::Zero;
+	this->radius = 0.0f;
 }
 
 void CollisionComponent::Initialize()

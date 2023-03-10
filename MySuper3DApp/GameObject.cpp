@@ -1,10 +1,11 @@
 #include "GameObject.h"
-#include "Component.h"
 
 GameObject::GameObject(GameObject* parent)
 {
 	this->parent = parent;
 	this->renderComponent = nullptr;
+	//this->collisionComponent = nullptr;
+	this->radius = 0.0f;
 }
 GameObject::~GameObject()
 {
@@ -33,13 +34,18 @@ void GameObject::Update(float deltaTime)
 
 void GameObject::UpdateWorld()
 {
-	/*
-	world = Matrix::CreateFromQuaternion(rotation) * Matrix::CreateTranslation(position);
+	world = Matrix::CreateFromQuaternion(GameObject::GetRotation()) * Matrix::CreateTranslation(GameObject::GetPosition());
 	if (parent)
 	{
 		world *= parent->GetWorld();
 	}
-	*/
+}
+
+void GameObject::CreateSphere(float radius, int sliceCount, int stackCount, DirectX::XMFLOAT4 color)
+{
+	renderComponent = new RenderComponent("../Shaders/MyVeryFirstShader.hlsl", D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+	renderComponent->AddSphere(radius, sliceCount, stackCount, color);
+	components.push_back(renderComponent);
 }
 
 Matrix GameObject::GetWorld() const        { return world;    }

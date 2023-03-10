@@ -1,21 +1,22 @@
 #pragma once
 #include "Component.h"
-#include <vector>
-#include "KatamariObject.h"
 
-using namespace DirectX;
+#include <vector>
+
+using namespace DirectX::SimpleMath;
 
 class CollisionComponent : public Component
 {
 public:
 
     Matrix World;
-    BoundingSphere* sphereCollision;
-    std::vector<BoundingSphere*> collisionComponents;
+
     Vector3 center;
     float radius;
+    DirectX::BoundingSphere* sphereCollision;
+    std::vector<DirectX::BoundingSphere*> collisionComponents;
 
-    CollisionComponent(float radius, Vector3 center);
+    CollisionComponent();
     
     void Initialize();
     void Update();

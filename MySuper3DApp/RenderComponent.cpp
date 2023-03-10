@@ -1,4 +1,5 @@
 #include "RenderComponent.h"
+
 #include "Game.h"
 #include "DisplayWin32.h"
 #include "Camera.h"

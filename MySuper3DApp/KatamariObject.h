@@ -1,31 +1,19 @@
 #pragma once
 #include "GameObject.h"
-#include "RenderComponent.h"
-#include "CollisionComponent.h"
-
-class RenderComponent;
-class CollisionComponent;
 
 class KatamariObject : public GameObject
 {
 public:
 
-    KatamariObject(KatamariObject* parent = nullptr, float katamariRadius = 1.0f);
+    KatamariObject(GameObject* parent = nullptr, float radius = 1.0f);
+
+    Vector3 rotationAxis;
+    float rotationSpeed;
+    Quaternion rotation;
 
     virtual void Update(float deltaTime) override;
     virtual void Initialize() override;
     virtual void UpdateWorld() override;
 
-    virtual Vector3 GetPosition() const override;
-
-    void CreateCube(float radius);
-    void CreateSphere(float radius, int sliceCount = 80, int stackCount = 80, DirectX::XMFLOAT4 color = Vector4::One);
-
-    CollisionComponent* collisionComponent;
-    Vector3 rotationAxis;
-    float rotationSpeed;
-    Quaternion rotator;
-    float radius;
-    bool isKatamari;
-    float katamariRadius;
+    //virtual Vector3 GetPosition() const override;
 };
